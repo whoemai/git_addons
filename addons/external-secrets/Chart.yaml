@@ -1,0 +1,10 @@
+apiVersion: v2
+name: external-secrets-addon
+description: A Helm chart wrapper for External Secrets and associated custom stores.
+type: application
+version: 1.0.0
+appVersion: "0.9.18"
+dependencies:
+  - name: external-secrets
+    version: 0.9.18
+    repository: https://charts.external-secrets.io

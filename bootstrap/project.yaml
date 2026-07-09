@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: addons
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Project for cluster-wide infrastructure addons (KEDA, External Secrets, External DNS, etc.)
+  sourceRepos:
+    # IMPORTANT: Replace this repoURL with your actual Git repository URL
+    - 'https://github.com/your-username/git_addons.git'
+  
+  # Allow addons to be deployed to any namespace inside the local cluster
+  destinations:
+    - namespace: '*'
+      server: 'https://kubernetes.default.svc'
+  
+  # Addons deploy cluster-scoped resources like CustomResourceDefinitions, ClusterRoles, and ClusterRoleBindings
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+
+  # Allow all namespace-scoped resources
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'

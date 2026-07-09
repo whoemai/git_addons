@@ -1,0 +1,24 @@
+# Default values for KEDA wrapper chart.
+# All values for the upstream KEDA chart must be nested under the 'keda' key.
+keda:
+  watchNamespace: ""
+  
+  operator:
+    replicaCount: 1
+    resources:
+      limits:
+        cpu: 500m
+        memory: 512Mi
+      requests:
+        cpu: 100m
+        memory: 256Mi
+
+  metricsServer:
+    replicaCount: 1
+    resources:
+      limits:
+        cpu: 500m
+        memory: 512Mi
+      requests:
+        cpu: 100m
+        memory: 256Mi
