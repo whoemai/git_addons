@@ -1,10 +1,14 @@
 external-dns:
   provider: azure
-  azure:
-    resourceGroup: "rg-aks-dev"
-    tenantId: "56122972-ef61-4781-bbdb-9e9c2c9ec7a5"
-    subscriptionId: "09fb16e3-874d-4121-b09f-9fc3e61ed5e0"
-    useManagedIdentityExtension: true
+  
+  extraVolumes:
+    - name: azure-config-file
+      secret:
+        secretName: azure-config-file
+  extraVolumeMounts:
+    - name: azure-config-file
+      mountPath: /etc/kubernetes
+      readOnly: true
   
   sources:
     - service
