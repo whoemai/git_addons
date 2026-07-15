@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     # IMPORTANT: Replace this repoURL with your actual Git repository URL
-    repoURL: 'https://github.com/your-username/git_addons.git'
+    repoURL: 'https://github.com/whoemai/git_addons.git'
     targetRevision: HEAD
     path: apps
   destination:
