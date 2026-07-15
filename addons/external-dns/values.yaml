@@ -1,10 +1,6 @@
-# Default values for External DNS wrapper chart.
-# All values for the upstream external-dns chart must be nested under the 'external-dns' key.
 external-dns:
-  # Provider setting (e.g., aws, cloudflare, azure, google, etc.)
   provider: aws
   
-  # Resources that External DNS should watch
   sources:
     - service
     - ingress

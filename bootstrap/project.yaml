@@ -8,20 +8,19 @@ metadata:
 spec:
   description: Project for cluster-wide infrastructure addons (KEDA, External Secrets, External DNS, etc.)
   sourceRepos:
-    # IMPORTANT: Replace this repoURL with your actual Git repository URL
     - 'https://github.com/whoemai/git_addons.git'
+    - 'https://kedacore.github.io/charts'
+    - 'https://charts.external-secrets.io'
+    - 'https://kubernetes-sigs.github.io/external-dns/'
   
-  # Allow addons to be deployed to any namespace inside the local cluster
   destinations:
     - namespace: '*'
       server: 'https://kubernetes.default.svc'
   
-  # Addons deploy cluster-scoped resources like CustomResourceDefinitions, ClusterRoles, and ClusterRoleBindings
   clusterResourceWhitelist:
     - group: '*'
       kind: '*'
 
-  # Allow all namespace-scoped resources
   namespaceResourceWhitelist:
     - group: '*'
       kind: '*'

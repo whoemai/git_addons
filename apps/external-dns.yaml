@@ -8,13 +8,11 @@ metadata:
 spec:
   project: addons
   source:
-    # IMPORTANT: Replace this repoURL with your actual Git repository URL
     repoURL: 'https://github.com/whoemai/git_addons.git'
     targetRevision: HEAD
     path: addons/external-dns
   destination:
     server: 'https://kubernetes.default.svc'
-    # Deploy to the 'external-dns' namespace
     namespace: external-dns
   syncPolicy:
     automated:

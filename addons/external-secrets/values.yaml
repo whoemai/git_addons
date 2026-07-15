@@ -1,7 +1,4 @@
-# Default values for External Secrets wrapper chart.
-# All values for the upstream external-secrets chart must be nested under the 'external-secrets' key.
 external-secrets:
-  # Install CRDs automatically as part of the chart release
   installCRDs: true
   
   replicaCount: 1

@@ -1,5 +1,3 @@
-# Default values for KEDA wrapper chart.
-# All values for the upstream KEDA chart must be nested under the 'keda' key.
 keda:
   watchNamespace: ""
   
