@@ -1,0 +1,8 @@
+apiVersion: v2
+name: ingress-nginx-addon
+description: Umbraco Ingress Nginx addon configuration
+version: 1.0.0
+dependencies:
+  - name: ingress-nginx
+    version: "4.10.1" # Standard stable version
+    repository: "https://kubernetes.github.io/ingress-nginx"
