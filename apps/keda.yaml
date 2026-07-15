@@ -19,6 +19,10 @@ spec:
       kind: "Deployment"
       jsonPointers:
         - /status/terminatingReplicas
+    - group: "admissionregistration.k8s.io"
+      kind: "ValidatingWebhookConfiguration"
+      jqPathExpressions:
+        - '.webhooks[].namespaceSelector'
   syncPolicy:
     automated:
       prune: true
